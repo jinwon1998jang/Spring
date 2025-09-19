@@ -1,0 +1,31 @@
+package kr.co.ch05.service;
+
+import kr.co.ch05.dto.User1DTO;
+import kr.co.ch05.mapper.User1Mapper;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@RequiredArgsConstructor
+@Service
+public class User1Service {
+
+    private final User1Mapper mapper;
+
+    public List<User1DTO> findAll(){
+        return mapper.selectAllUser1();
+    }
+    public User1DTO findById(String user_id){ // 'uid'를 'user_id'로 수정
+        return mapper.selectUser1(user_id);
+    }
+    public void regist(User1DTO user1DTO){
+        mapper.insertUser1(user1DTO);
+    }
+    public void modify(User1DTO user1DTO){
+        mapper.updateUser1(user1DTO);
+    }
+    public void remove(String user_id){ // 'uid'를 'user_id'로 수정
+        mapper.deleteUser1(user_id);
+    }
+}
