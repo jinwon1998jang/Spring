@@ -4,8 +4,8 @@ package kr.co.ch05.dto;
 import lombok.*;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class User1DTO {
     private String user_id;
